@@ -100,9 +100,9 @@ public class QuickSort
     public static void qsortH(int[] d, int low, int high,int pivot){
       if(low >= high){return;}
       int temp = partition(d,low,high,pivot);
-/*      qsortH(d,low,temp-1,(low + temp -1)/2);
+/*      qsortH(d,low,temp-1,(low + temp -1)/2); 
       qsortH(d,temp+1,high,(high + temp +1)/2);*/
-      qsortH(d,low,temp-1,low);
+      qsortH(d,low,temp-1,low); // find the max or min of the set for worst case
       qsortH(d,temp+1,high,temp +1);
     }
 

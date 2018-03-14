@@ -19,7 +19,7 @@ public class QuickSortTester{
 
     public static void addTime() {
     	arr = generateArray(size);
-		for(int i = 0; i < 10; i++ ){ // 100 trials
+		for(int i = 0; i < 10; i++ ){ // 10 trials
 		    double before = System.nanoTime();
 		    QuickSort.qsort(arr,0);
 		    totalTime += System.nanoTime()-before;
