@@ -92,7 +92,7 @@ public class QuickSort
     }*/
 
     public static void qsort( int[] d, int pivot){
-        qsort(d,0,d.length-1,pivot);
+        qsortH(d,0,d.length-1,pivot);
     }
 
     //you may need a helper method...
@@ -100,14 +100,16 @@ public class QuickSort
     public static void qsortH(int[] d, int low, int high,int pivot){
       if(low >= high){return;}
       int temp = partition(d,low,high,pivot);
-      qsort(d,low,temp-1,(low + temp -1)/2);
-      qsort(d,temp+1,high,(high + temp +1)/2);
+/*      qsortH(d,low,temp-1,(low + temp -1)/2);
+      qsortH(d,temp+1,high,(high + temp +1)/2);*/
+      qsortH(d,low,temp-1,low);
+      qsortH(d,temp+1,high,temp +1);
     }
 
     //main method for testing
     public static void main( String[] args )
     {
-
+/*
       //get-it-up-and-running, static test case:
       int [] arr1 = {7,1,5,12,3};
       System.out.println("\narr1 init'd to: " );
@@ -135,7 +137,7 @@ public class QuickSort
       /*~~~~s~l~i~d~e~~~m~e~~~d~o~w~n~~~~~~~~~~~~~~~~~~~~ (C-k, C-k, C-y)
 
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+/*
       //get-it-up-and-running, static test case w/ dupes:
       int [] arr2 = {7,1,5,12,3,7};
       System.out.println("\narr2 init'd to: " );

@@ -19,9 +19,9 @@ public class QuickSortTester{
 
     public static void addTime() {
     	arr = generateArray(size);
-		for(int i = 0; i < 1000; i++ ){ // 100 trials
+		for(int i = 0; i < 10; i++ ){ // 100 trials
 		    double before = System.nanoTime();
-		    QuickSort.qsort(arr);
+		    QuickSort.qsort(arr,0);
 		    totalTime += System.nanoTime()-before;
 		}
     }
@@ -29,20 +29,20 @@ public class QuickSortTester{
     public static void write() {	// displays time
 		totalTime = 0;		
 		addTime();
-		double time = totalTime / 1000;
+		double time = totalTime / 10;
 		System.out.println(size + "," + time + "," + ( time / size ));
     }
 
     public static void main(String []args){
 	
-		arr = generateArray(100);
+/*		arr = generateArray(100);
 
 		//Warmup
 		for (int i = 0; i < 100; i++) {
 		    QuickSort.qsort(arr);
-		}
-		
-		System.out.println("size,time(nanoSeconds),timePerSize");
+		}*/
+
+		System.out.println("size,time,timePerSize");
 		for( size = 1000; size <= 100000; size += 1000){
 		    write();
 		}
